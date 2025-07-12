@@ -1,0 +1,214 @@
+/* --- General Body and Card Layout --- */
+body {
+    background-color: #fdf1d8;
+    background-image: url('https://www.transparenttextures.com/patterns/light-paper-fibers.png');
+    font-family: 'EB Garamond', 'Georgia', serif;
+    margin: 20px;
+    color: #3b3325;
+}
+
+.main-card {
+    max-width: 800px;
+    margin: 20px auto;
+    background: #fbf5e7;
+    border: 1px solid #d9c8b3;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    padding: 24px 36px;
+}
+
+.title-header {
+    font-family: 'UnifrakturCook', 'Goudy Stout', 'serif';
+    font-size: 2.8em;
+    color: #58180d;
+    text-align: center;
+    margin: 0;
+}
+
+.subtitle-header {
+    text-align: center;
+    margin: -5px 0 20px 0;
+    font-style: italic;
+    color: #6c5f49;
+}
+
+
+/* --- Form and Controls --- */
+.monster-form {
+    margin-bottom: 20px;
+}
+.form-row {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+#monster-prompt {
+    flex-grow: 1;
+}
+input[type="text"], input[type="number"], select {
+    font-family: 'EB Garamond', serif;
+    font-size: 1em;
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid #d9c8b3;
+    background: #fff;
+}
+button {
+    font-family: 'EB Garamond', serif;
+    font-size: 1em;
+    padding: 8px 16px;
+    border-radius: 4px;
+    border: 1px solid #b99a66;
+    background: #d4b98f;
+    color: #58180d;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+button:hover:not(:disabled) {
+    background: #c9ac82;
+}
+button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+.controls-bar {
+    text-align: center;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #d9c8b3;
+    margin-bottom: 20px;
+}
+
+/* --- Statblock Core Styles --- */
+.statblock {
+    background: #f9f2e7;
+    padding: 10px 15px;
+    border: 1px solid #d9c8b3;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1) inset;
+}
+.monster-name {
+    font-family: 'Crimson Text', serif;
+    font-size: 2.2em;
+    font-weight: 700;
+    color: #8a0e04;
+    margin: 0;
+}
+.monster-meta {
+    font-style: italic;
+    color: #3b3325;
+    margin-bottom: 5px;
+}
+.trait-line {
+    margin: 4px 0;
+    line-height: 1.4;
+}
+.trait-line b {
+    color: #58180d;
+    font-weight: bold;
+}
+
+/* Red divider rules */
+.tapered-rule {
+    height: 5px;
+    background: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMCA1Ij48cGF0aCBmaWxsPSIjOWEyYzA0IiBkPSJNMCAwaDEwbC01IDV6Ii8+PC9zdmc+) repeat-x;
+    background-size: 10px 5px;
+    border: 0;
+    margin: 10px 0;
+}
+.tapered-rule.bottom {
+    transform: scaleY(-1);
+}
+
+/* Ability Scores */
+.ability-scores {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+}
+.ability-score h4 {
+    margin: 0 0 4px 0;
+    font-weight: bold;
+    color: #58180d;
+}
+.ability-score p {
+    margin: 0;
+}
+.ability-score input {
+    width: 50px;
+    text-align: center;
+}
+
+/* Sections (Abilities, Actions) */
+.abilities-section p, .actions-section p {
+    margin: 0 0 0.8em 0;
+    text-indent: -1em;
+    padding-left: 1em;
+}
+.actions-header {
+    font-family: 'Crimson Text', serif;
+    font-size: 1.6em;
+    font-weight: 700;
+    color: #8a0e04;
+    border-bottom: 1px solid #8a0e04;
+    margin: 15px 0 10px 0;
+    padding-bottom: 2px;
+}
+
+/* --- Editing Styles --- */
+.inline-edit {
+    font-size: 1em;
+    border: 1px dotted #a08c72;
+    background: #fffcf5;
+    padding: 1px 4px;
+}
+.edit-list-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 5px;
+}
+.edit-list-item textarea {
+    flex-grow: 1;
+    height: 50px;
+    font-family: 'EB Garamond', serif;
+    border: 1px dotted #a08c72;
+    background: #fffcf5;
+    padding: 4px;
+}
+.add-btn, .remove-btn {
+    font-size: 0.8em;
+    padding: 2px 6px;
+    min-width: 25px;
+    background: #e9e2d6;
+}
+.remove-btn { background: #dcc8c8; }
+
+/* --- Feedback (Loader, Error) --- */
+.loading-spinner {
+    border: 6px solid #e0d0b8;
+    border-top: 6px solid #8a0e04;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+    margin: 20px auto;
+}
+@keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+
+.loader-text {
+    text-align: center;
+    font-family: 'Crimson Text', serif;
+    font-size: 1.2em;
+    color: #58180d;
+}
+.error-box {
+    background: #f9e2e2;
+    border: 1px solid #c8aaaa;
+    border-radius: 4px;
+    padding: 15px;
+    margin: 20px 0;
+}
+.error-box h4 {
+    margin: 0 0 5px 0;
+    color: #8a0e04;
+}
